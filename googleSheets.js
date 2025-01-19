@@ -38,4 +38,11 @@ app.get('/getGoogleSheetData', async (req, res) => {
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
+});app.get('/getGoogleSheetData', async (req, res) => {
+    try {
+        const data = await getGoogleSheetData();
+        res.json(data);
+    } catch (error) {
+        res.status(500).send('Error fetching data');
+    }
 });
