@@ -28,4 +28,3 @@ export default async (req, res) => {
         res.status(500).json({ error: 'Error fetching data' });
     }
 };
-Moved googleSheets.js to the api folder for Vercel compatibility
